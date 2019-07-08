@@ -1,0 +1,275 @@
+﻿
+@model SlotMachine.Models.SlotMachineModel
+
+
+@{
+
+    var betamount = Model.BetAmount;
+    var playerbalance = Model.PlayerBalance;
+
+    var maintitle = ViewData["maintitle"];
+    var mainColor = ViewData["maincolor"];
+}
+
+
+@using (Html.BeginForm())
+{
+    <h3 id="title1">@maintitle</h3>
+    <br />
+
+    <div id="tabs" style=" background-color : @mainColor">
+
+        <ul>
+            <li><a href="#tab-1">Slot Machine</a></li>
+            <li><a href="#tab-2">New High Score</a></li>
+            <li><a href="#tab-3">Future use</a></li>
+        </ul>
+
+        <div class="row col-sm-12">
+        </div>
+
+        <div id="tab-1">
+            
+            <h3>Hello Test Sunday.</h3>
+
+            <div class="row col-sm-12">
+
+                <div id="slotpanel" class="col-sm-6">
+                    <!-- div tag for spinner-->
+                </div>
+
+                <div id="resultpanel" class="col-sm-6">
+                    @Html.Partial("SlotViewPartial", Model)
+                </div>
+
+            </div>
+
+            <div class="row col-sm-6">
+                <br />
+                <div class="row col-sm-12">
+                    <input id="playbutton" type="button" value="Spin" class="btn btn-default  " />
+                    <input id="maxbetbutton" type="button" value="Max Bet" class="btn btn-default  " />
+                    <input id="addcreditbutton" type="button" value="Add 1 Credit" class="btn btn-default " />
+
+                    <input id="Winbutton" type="button" value="Win" class="btn btn-default " />
+                    <input id="payoutbutton" type="button" value="Payout" class="btn btn-default hide" />
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="tab-2">
+
+            <h3>High Score Tab</h3>
+
+            <div id="resultpanel" class="col-sm-6">
+                @Html.Partial("HighScorePartial", Model.AllHighScores)
+            </div>
+
+            <div class="row">
+                <br />
+            </div>
+
+            <div class="row col-md-offset-6 ">
+                <p>
+                    The High Score is using a Table in Azure Storage.<br />
+                    Each request reads from the table and high scores are written back to the table
+                </p>
+                <span id="info"></span>
+            </div>
+
+        </div>
+
+        <div id="tab-3">
+
+          
+            <div class="row">
+                <br />
+            </div>
+
+            <div class="row col-md-offset-6 ">
+                <p>
+                    To Be Determined.<br />
+                   
+                </p>
+                <span id="info"></span>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+}
+
+
+<script type="text/javascript">
+
+    // initialize slot spinners
+    // https://github.com/kirkjerk/ezslots/blob/master/README.md
+    // ezSlots is a light weight slot machine spinner for jquery
+    var slotMachine = new EZSlots("slotpanel", {
+        "realcount": 3, "symbols": images, "winningSet": [0, 0, 0],"height": 126, "width": 126
+    });
+
+
+    // var to hold location info
+    var locjson = {};
+
+    var playerbalance = @Model.PlayerBalance;
+
+    $(document).ready(function () {
+
+
+        Togglebutton(false);
+
+        $('#playbutton').click(function () { PlayGame(); });
+        $('#maxbetbutton').click(function () { MaxBettPlaced(); });
+        $('#addcreditbutton').click(function () { AddCredit(1); });
+        $('#Winbutton').click(function () { winitall(); });
+        $('#payoutbutton').click(function () { Payout(); });
+
+      });
+
+     $( function() {
+        $( "#tabs" ).tabs({
+          collapsible: true
+        });
+
+  } );
+
+        //GetUpdateHighScore(playerbalance);
+
+    function winitall() {
+        // disable buttons
+        Togglebutton(true);
+
+        AddCredit(3);
+
+        // start slot spinner
+        var spinresults = slotMachine.win();
+
+        // call back to servver for results
+        $.ajax({
+            cache: false,
+            type: 'POST',
+            url: '@Url.Action("PlayGame", "Home")',
+            data: { results: spinresults },
+            success: function (data) {
+                $('#resultpanel').html(data);
+                Togglebutton(false);
+
+            }
+        });
+
+
+    };
+
+    function GetUpdateHighScore(hscore) {
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetData","Data")',
+            data: { highscore: @Model},
+            success: function (data) {
+                alert(data );
+            }
+        });
+
+    }
+
+    function PlayGame() {
+        // disable buttons
+        Togglebutton(true);
+
+        // start slot spinner
+        var spinresults = slotMachine.spin();
+
+        $.ajax({
+            cache: false,
+            type: 'POST',
+            url: '@Url.Action("PlayGame", "Home")',
+            data: { results: spinresults },
+            success: function (data) {
+               $('#resultpanel').html(data);
+
+                // turn on buttons
+                Togglebutton(false);
+
+            }
+        });
+
+
+    };
+
+
+    function Payout() {
+        Togglebutton(true);
+
+        $.ajax({
+            type: 'get',
+            dataType: 'json',
+            cache: false,
+            url: '/Home/GetFinalBalance',
+            success: function (response, textStatus, jqXHR) {
+                alert('Final Balance is : ' + parseInt(response.finalbalance));
+            }
+        });
+    };
+
+
+    // add max credit and spin
+    function MaxBettPlaced()
+        {
+            // disable buttons
+            Togglebutton(true);
+
+            // add max credits
+            if (@playerbalance >= 3)
+            {
+                AddCredit(3);
+            }
+            else
+            {
+                AddCredit(@playerbalance);
+            }
+
+            // start slot spinner
+            var spinresults = slotMachine.spin();
+
+            // call back to servver for results
+            $.ajax({
+                cache: false,
+                type: 'POST',
+                url: '@Url.Action("PlayGame", "Home")',
+                data: { results: spinresults , loc: locjson},
+                success: function (data) {
+                    $('#resultpanel').html(data);
+                    Togglebutton(false);
+                }
+            });
+
+    };
+
+
+
+    function AddCredit(addmax) {
+
+        $.ajax({
+            cache: false,
+            type: 'POST',
+            url: '@Url.Action("AddCredit", "Home")',
+            data: { addcred: addmax },
+            success: function (data) {
+                $('#resultpanel').html(data);
+            }
+        });
+    };
+
+</script>
+
+
+
+

@@ -1,0 +1,981 @@
+{
+    "source": 2,
+    "revision": 51,
+    "description": null,
+    "createdBy": {
+        "displayName": "Art Garcia",
+        "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+        "_links": {
+            "avatar": {
+                "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+            }
+        },
+        "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+        "uniqueName": "argarc@microsoft.com",
+        "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+        "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+    },
+    "createdOn": "2019-06-24T13:20:34.530Z",
+    "modifiedBy": {
+        "displayName": "Art Garcia",
+        "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+        "_links": {
+            "avatar": {
+                "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+            }
+        },
+        "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+        "uniqueName": "argarc@microsoft.com",
+        "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+        "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+    },
+    "modifiedOn": "2019-07-03T03:40:40.573Z",
+    "isDeleted": false,
+    "variables": {
+        "Location": {
+            "value": "West US"
+        },
+        "ResourceGroupName": {
+            "value": "aagReadySummer2019"
+        },
+        "ServicePlanName": {
+            "value": "aagSlots"
+        },
+        "SlotName": {
+            "value": "QA"
+        },
+        "smoketestURL": {
+            "value": "https://aagslotmachine2019.azurewebsites.net/"
+        },
+        "WebSite": {
+            "value": "aagSlotMachine2019"
+        }
+    },
+    "variableGroups": [],
+    "environments": [
+	{
+        "id": 4,
+        "name": "Dev",
+        "rank": 1,
+        "owner": {
+            "displayName": "Art Garcia",
+            "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "_links": {
+                "avatar": {
+                    "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+                }
+            },
+            "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "uniqueName": "argarc@microsoft.com",
+            "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+            "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 10
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 11
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 12
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": 0
+                },
+                "agentSpecification": null,
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 253,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Agent job",
+            "refName": null,
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "d026b107-54f7-4964-a972-48c0ba31286a",
+                "version": "1.*",
+                "name": "Task group: Ready 2019-Deployment Group $(Location)",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": true,
+                "continueOnError": true,
+                "timeoutInMinutes": 0,
+                "definitionType": "metaTask",
+                "overrideInputs": {},
+                "condition": "succeededOrFailed()",
+                "inputs": {
+                    "Location": "$(Location)",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "ServicePlanName": "",
+                    "SlotName": "Dev",
+                    "WebSite": "$(WebSite)"
+                }
+            }, {
+                "environment": {},
+                "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
+                "version": "2.*",
+                "name": "Set App Settings: ",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "ConnectedServiceName": "48aaa39c-2d17-4724-824f-1b31daf8c32d",
+                    "WebAppName": "$(WebSite)",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "Slot": "DEV",
+                    "AppSettings": "title1='Ready Summer 2019 Slot Machine App - DEV'\n"
+                }
+            }, {
+                "environment": {},
+                "taskId": "dc2ae2d3-39bd-4b8a-9515-b708bf733a36",
+                "version": "1.*",
+                "name": "Smoke Web Test",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "url": "https://aagslotmachine2019-dev.azurewebsites.net/",
+                    "expectedReturnCode": "200",
+                    "timeout": "100"
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": true,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "ReleaseStarted",
+            "conditionType": 1,
+            "value": ""
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 1,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 125,
+            "url": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/releases/125",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://vsrm.dev.azure.com/artgarciavsts/_apis/public/Release/badge/20a68684-d4e2-48af-89e4-ab55705e1639/3/4"
+    }, 
+	{
+        "id": 5,
+        "name": "QA",
+        "rank": 2,
+        "owner": {
+            "displayName": "Art Garcia",
+            "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "_links": {
+                "avatar": {
+                    "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+                }
+            },
+            "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "uniqueName": "argarc@microsoft.com",
+            "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+            "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 13
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 14
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 15
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": 0
+                },
+                "agentSpecification": null,
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 253,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Agent job",
+            "refName": null,
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "d026b107-54f7-4964-a972-48c0ba31286a",
+                "version": "1.*",
+                "name": "Task group: Ready 2019-Deployment Group $(Location)",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": true,
+                "continueOnError": true,
+                "timeoutInMinutes": 0,
+                "definitionType": "metaTask",
+                "overrideInputs": {},
+                "condition": "succeededOrFailed()",
+                "inputs": {
+                    "Location": "$(Location)",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "ServicePlanName": "",
+                    "SlotName": "QA",
+                    "WebSite": "$(WebSite)"
+                }
+            }, {
+                "environment": {},
+                "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
+                "version": "2.*",
+                "name": "Set App Settings: ",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "ConnectedServiceName": "48aaa39c-2d17-4724-824f-1b31daf8c32d",
+                    "WebAppName": "$(WebSite)",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "Slot": "QA",
+                    "AppSettings": "title1='Ready Summer 2019 Slot Machine App - QA'\n"
+                }
+            }, {
+                "environment": {},
+                "taskId": "dc2ae2d3-39bd-4b8a-9515-b708bf733a36",
+                "version": "1.*",
+                "name": "Smoke Web Test",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "url": "https://aagslotmachine2019-qa.azurewebsites.net/",
+                    "expectedReturnCode": "200",
+                    "timeout": "100"
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": true,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "Dev",
+            "conditionType": 2,
+            "value": "4"
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 1,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 125,
+            "url": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/releases/125",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://vsrm.dev.azure.com/artgarciavsts/_apis/public/Release/badge/20a68684-d4e2-48af-89e4-ab55705e1639/3/5"
+    }, 
+	{
+        "id": 6,
+        "name": "Production",
+        "rank": 3,
+        "owner": {
+            "displayName": "Art Garcia",
+            "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "_links": {
+                "avatar": {
+                    "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+                }
+            },
+            "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "uniqueName": "argarc@microsoft.com",
+            "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+            "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 16
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 17
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 18
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": 0
+                },
+                "agentSpecification": null,
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 253,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Agent job",
+            "refName": null,
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+                "version": "2.*",
+                "name": "Azure Deployment:Create Or Update Resource Group action on $(ResourceGroupName)",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "ConnectedServiceName": "48aaa39c-2d17-4724-824f-1b31daf8c32d",
+                    "action": "Create Or Update Resource Group",
+                    "resourceGroupName": "$(ResourceGroupName)",
+                    "location": "$(Location)",
+                    "templateLocation": "Linked artifact",
+                    "csmFileLink": "",
+                    "csmParametersFileLink": "",
+                    "csmFile": "$(System.DefaultWorkingDirectory)/_Ready 2019 ASP .NET SonarCloud/drop/readyDemoRG/azuredeploy.json",
+                    "csmParametersFile": "",
+                    "overrideParameters": "-basewebsitename \"$(WebSite)\" -environments [\"Dev\",\"QA\"] \n-appServicePlan \"$(ServicePlanName)\" \n-appTitleValue \"SlotMachine - Prod\" -location \"$(Location)\"",
+                    "deploymentMode": "Incremental",
+                    "enableDeploymentPrerequisites": "None",
+                    "deploymentGroupEndpoint": "",
+                    "project": "",
+                    "deploymentGroupName": "",
+                    "copyAzureVMTags": "true",
+                    "runAgentServiceAsUser": "false",
+                    "userName": "",
+                    "password": "",
+                    "outputVariable": "",
+                    "deploymentName": "",
+                    "deploymentOutputs": "",
+                    "addSpnToEnvironment": "false"
+                }
+            }, {
+                "environment": {},
+                "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
+                "version": "2.*",
+                "name": "Set App Settings: ",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "ConnectedServiceName": "48aaa39c-2d17-4724-824f-1b31daf8c32d",
+                    "WebAppName": "aagSlotMachine2019",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "Slot": "",
+                    "AppSettings": "title1='Ready 2019 Prod SlotMachine'\n"
+                }
+            }, {
+                "environment": {},
+                "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+                "version": "0.*",
+                "name": "Swap Slots: $(WebSite)",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "ConnectedServiceName": "48aaa39c-2d17-4724-824f-1b31daf8c32d",
+                    "Action": "Swap Slots",
+                    "WebAppName": "$(WebSite)",
+                    "SpecifySlot": "true",
+                    "ResourceGroupName": "$(ResourceGroupName)",
+                    "SourceSlot": "QA",
+                    "SwapWithProduction": "true",
+                    "TargetSlot": "",
+                    "PreserveVnet": "false",
+                    "Slot": "production",
+                    "ExtensionsList": "",
+                    "OutputVariable": "",
+                    "AppInsightsResourceGroupName": "",
+                    "ApplicationInsightsResourceName": "",
+                    "ApplicationInsightsWebTestName": ""
+                }
+            }, {
+                "environment": {},
+                "taskId": "dc2ae2d3-39bd-4b8a-9515-b708bf733a36",
+                "version": "1.*",
+                "name": "Smoke Web Test",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "url": "https://aagslotmachine2019.azurewebsites.net/",
+                    "expectedReturnCode": "200",
+                    "timeout": "100"
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": true,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "QA",
+            "conditionType": 2,
+            "value": "4"
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 1,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 125,
+            "url": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/releases/125",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://vsrm.dev.azure.com/artgarciavsts/_apis/public/Release/badge/20a68684-d4e2-48af-89e4-ab55705e1639/3/6"
+    }, 
+	{
+        "id": 7,
+        "name": "Deploy to VW",
+        "rank": 4,
+        "owner": {
+            "displayName": "Art Garcia",
+            "url": "https://spsprodeus23.vssps.visualstudio.com/Ad4c89512-020d-4a9f-a1f4-00d896dc6ee8/_apis/Identities/f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "_links": {
+                "avatar": {
+                    "href": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+                }
+            },
+            "id": "f2aa6d4e-eb21-6ff4-b62e-61959e45eab3",
+            "uniqueName": "argarc@microsoft.com",
+            "imageUrl": "https://dev.azure.com/artgarciavsts/_apis/GraphProfile/MemberAvatars/aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz",
+            "descriptor": "aad.ZjJhYTZkNGUtZWIyMS03ZmY0LWI2MmUtNjE5NTllNDVlYWIz"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 19
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 20
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 21
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": 0
+                },
+                "agentSpecification": null,
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 253,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Agent job",
+            "refName": null,
+            "workflowTasks": []
+        }, {
+            "deploymentInput": {
+                "healthPercent": 0,
+                "deploymentHealthOption": "Custom",
+                "tags": [],
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 259,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 2,
+            "phaseType": 4,
+            "name": "Deployment group job",
+            "refName": null,
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "1b2aec60-dc49-11e6-9b76-63056e018cac",
+                "version": "0.*",
+                "name": "Manage IISWebsite",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "EnableIIS": "true",
+                    "IISDeploymentType": "IISWebsite",
+                    "ActionIISWebsite": "CreateOrUpdateWebsite",
+                    "ActionIISApplicationPool": "CreateOrUpdateAppPool",
+                    "StartStopWebsiteName": "",
+                    "WebsiteName": "vmslotmacine",
+                    "WebsitePhysicalPath": "%SystemDrive%\\inetpub\\wwwroot",
+                    "WebsitePhysicalPathAuth": "WebsiteUserPassThrough",
+                    "WebsiteAuthUserName": "",
+                    "WebsiteAuthUserPassword": "",
+                    "AddBinding": "false",
+                    "Protocol": "http",
+                    "IPAddress": "All Unassigned",
+                    "Port": "80",
+                    "ServerNameIndication": "false",
+                    "HostNameWithOutSNI": "",
+                    "HostNameWithHttp": "",
+                    "HostNameWithSNI": "",
+                    "SSLCertThumbPrint": "",
+                    "Bindings": "",
+                    "CreateOrUpdateAppPoolForWebsite": "false",
+                    "ConfigureAuthenticationForWebsite": "false",
+                    "AppPoolNameForWebsite": "",
+                    "DotNetVersionForWebsite": "v4.0",
+                    "PipeLineModeForWebsite": "Integrated",
+                    "AppPoolIdentityForWebsite": "ApplicationPoolIdentity",
+                    "AppPoolUsernameForWebsite": "",
+                    "AppPoolPasswordForWebsite": "",
+                    "AnonymousAuthenticationForWebsite": "false",
+                    "BasicAuthenticationForWebsite": "false",
+                    "WindowsAuthenticationForWebsite": "true",
+                    "ParentWebsiteNameForVD": "",
+                    "VirtualPathForVD": "",
+                    "PhysicalPathForVD": "%SystemDrive%\\inetpub\\wwwroot",
+                    "VDPhysicalPathAuth": "VDUserPassThrough",
+                    "VDAuthUserName": "",
+                    "VDAuthUserPassword": "",
+                    "ParentWebsiteNameForApplication": "",
+                    "VirtualPathForApplication": "",
+                    "PhysicalPathForApplication": "%SystemDrive%\\inetpub\\wwwroot",
+                    "ApplicationPhysicalPathAuth": "ApplicationUserPassThrough",
+                    "ApplicationAuthUserName": "",
+                    "ApplicationAuthUserPassword": "",
+                    "CreateOrUpdateAppPoolForApplication": "false",
+                    "AppPoolNameForApplication": "",
+                    "DotNetVersionForApplication": "v4.0",
+                    "PipeLineModeForApplication": "Integrated",
+                    "AppPoolIdentityForApplication": "ApplicationPoolIdentity",
+                    "AppPoolUsernameForApplication": "",
+                    "AppPoolPasswordForApplication": "",
+                    "AppPoolName": "",
+                    "DotNetVersion": "v4.0",
+                    "PipeLineMode": "Integrated",
+                    "AppPoolIdentity": "ApplicationPoolIdentity",
+                    "AppPoolUsername": "",
+                    "AppPoolPassword": "",
+                    "StartStopRecycleAppPoolName": "",
+                    "AppCmdCommands": ""
+                }
+            }, {
+                "environment": {},
+                "taskId": "1b467810-6725-4b6d-accd-886174c09bba",
+                "version": "0.*",
+                "name": "Deploy IIS Website/App: ",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "WebSiteName": "vmslotmacine",
+                    "VirtualApplication": "",
+                    "Package": "$(System.DefaultWorkingDirectory)\\**\\*.zip",
+                    "SetParametersFile": "",
+                    "RemoveAdditionalFilesFlag": "false",
+                    "ExcludeFilesFromAppDataFlag": "false",
+                    "TakeAppOfflineFlag": "false",
+                    "AdditionalArguments": "",
+                    "XmlTransformation": "false",
+                    "XmlVariableSubstitution": "false",
+                    "JSONFiles": ""
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": true,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "ReleaseStarted",
+            "conditionType": 1,
+            "value": ""
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 1,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 125,
+            "url": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/releases/125",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://vsrm.dev.azure.com/artgarciavsts/_apis/public/Release/badge/20a68684-d4e2-48af-89e4-ab55705e1639/3/7"
+    }],
+    "artifacts": [{
+        "sourceId": "20a68684-d4e2-48af-89e4-ab55705e1639:26",
+        "type": "Build",
+        "alias": "_Ready 2019 ASP .NET SonarCloud",
+        "definitionReference": {
+            "artifactSourceDefinitionUrl": {
+                "id": "https://dev.azure.com/artgarciavsts/_permalink/_build/index?collectionId=cd5a77b0-cbe1-4e82-beef-d4ccf88a664e&projectId=20a68684-d4e2-48af-89e4-ab55705e1639&definitionId=26",
+                "name": ""
+            },
+            "defaultVersionBranch": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionSpecific": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionTags": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionType": {
+                "id": "latestType",
+                "name": "Latest"
+            },
+            "definition": {
+                "id": "26",
+                "name": "Ready 2019 ASP .NET SonarCloud"
+            },
+            "definitions": {
+                "id": "",
+                "name": ""
+            },
+            "IsMultiDefinitionType": {
+                "id": "False",
+                "name": "False"
+            },
+            "project": {
+                "id": "20a68684-d4e2-48af-89e4-ab55705e1639",
+                "name": "Ready-7-2019"
+            },
+            "repository": {
+                "id": "",
+                "name": ""
+            }
+        },
+        "isPrimary": true,
+        "isRetained": false
+    }],
+    "triggers": [{
+        "artifactAlias": "_Ready 2019 ASP .NET SonarCloud",
+        "triggerConditions": [],
+        "triggerType": 1
+    }],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "pipelineProcess": {
+        "type": 1
+    },
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
+        },
+        "IntegrateJiraWorkItems": {
+            "$type": "System.String",
+            "$value": "false"
+        }
+    },
+    "id": 3,
+    "name": "Ready 2019 Release Pipeline",
+    "path": "\\",
+    "projectReference": null,
+    "url": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/definitions/3",
+    "_links": {
+        "self": {
+            "href": "https://vsrm.dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_apis/Release/definitions/3"
+        },
+        "web": {
+            "href": "https://dev.azure.com/artgarciavsts/20a68684-d4e2-48af-89e4-ab55705e1639/_release?definitionId=3"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿
+@using GridMvc.Html
+@using GridMvc.Sorting
+
+@model  IEnumerable<SlotMachine.Models.HighScoreModel>
+
+
+<div class="container-fluid">
+
+    <div class="mygrid-div">
+
+        @Html.Grid(Model).Named("HighscoreGrid").Columns(columns =>
+        {
+
+            columns.Add(o => o.HighUserName)
+                    .Titled("Location")
+                    .Filterable(false)
+                    .Sortable(true)
+                    .SetWidth(65);
+
+            columns.Add(o => o.Ipaddress)
+                    .Titled("IP Address")
+                    .Sortable(true)
+                    .SetWidth(30);
+
+            columns.Add(o => o.HighScore)
+                    .Titled("Score")
+                    .Sortable(true)
+                    .SetWidth(25);
+
+
+        }).WithMultipleFilters()
+
+    </div>
+
+
+</div>
