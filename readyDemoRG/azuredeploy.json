@@ -36,6 +36,13 @@
       },
       "type": "string"
     },
+    "appColorValue": {
+      "maxLength": 20,
+      "metadata": {
+        "description": "Color for App Setting color1"
+      },
+      "type": "string"
+    },
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
@@ -94,10 +101,10 @@
             "displayName": "appSettings"
           },
           "properties": {
-            "title": "parameters('appTitleValue)"
+            "title1": "[parameters('appTitleValue')]",
+            "color1": "[parameters('appColorValue')]"
           }
         }
-        
         
       ]
     },
@@ -186,141 +193,6 @@
         ],
         "enabled": false,
         "targetResourceUri": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan'))]"
-      }
-    },
-    {
-      "name": "[concat('CPUHigh ', parameters('appServicePlan'))]",
-      "type": "Microsoft.Insights/alertrules",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan'))]"
-      ],
-      "tags": {
-        "[concat('hidden-link:', resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan')))]": "Resource",
-        "displayName": "CPUHigh appMonitor"
-      },
-      "properties": {
-        "name": "[concat('CPUHigh ', parameters('appServicePlan'))]",
-        "description": "[concat('The average CPU is high across all the instances of ', parameters('appServicePlan'))]",
-        "isEnabled": false,
-        "condition": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
-          "dataSource": {
-            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
-            "resourceUri": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan'))]",
-            "metricName": "CpuPercentage"
-          },
-          "operator": "GreaterThan",
-          "threshold": 90,
-          "windowSize": "PT15M"
-        },
-        "action": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
-          "sendToServiceOwners": true,
-          "customEmails": []
-        }
-      }
-    },
-    {
-      "name": "[concat('LongHttpQueue ', parameters('appServicePlan'))]",
-      "type": "Microsoft.Insights/alertrules",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan'))]"
-      ],
-      "tags": {
-        "[concat('hidden-link:', resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan')))]": "Resource",
-        "displayName": "LongHttpQueue appMonitor"
-      },
-      "properties": {
-        "name": "[concat('LongHttpQueue ', parameters('appServicePlan'))]",
-        "description": "[concat('The HTTP queue for the instances of ', parameters('appServicePlan'), ' has a large number of pending requests.')]",
-        "isEnabled": false,
-        "condition": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
-          "dataSource": {
-            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
-            "resourceUri": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlan'))]",
-            "metricName": "HttpQueueLength"
-          },
-          "operator": "GreaterThan",
-          "threshold": 100,
-          "windowSize": "PT5M"
-        },
-        "action": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
-          "sendToServiceOwners": true,
-          "customEmails": []
-        }
-      }
-    },
-    {
-      "name": "[concat('ServerErrors ', 'appMonitor')]",
-      "type": "Microsoft.Insights/alertrules",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', variables('webAppPortalName'))]"
-      ],
-      "tags": {
-        "[concat('hidden-link:', resourceId('Microsoft.Web/sites', variables('webAppPortalName')))]": "Resource",
-        "displayName": "ServerErrors appMonitor"
-      },
-      "properties": {
-        "name": "[concat('ServerErrors ', variables('webAppPortalName'))]",
-        "description": "[concat(variables('webAppPortalName'), ' has some server errors, status code 5xx.')]",
-        "isEnabled": false,
-        "condition": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
-          "dataSource": {
-            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
-            "resourceUri": "[resourceId('Microsoft.Web/sites', variables('webAppPortalName'))]",
-            "metricName": "Http5xx"
-          },
-          "operator": "GreaterThan",
-          "threshold": 0,
-          "windowSize": "PT5M"
-        },
-        "action": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
-          "sendToServiceOwners": true,
-          "customEmails": []
-        }
-      }
-    },
-    {
-      "name": "[concat('ForbiddenRequests ', 'appMonitor')]",
-      "type": "Microsoft.Insights/alertrules",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', variables('webAppPortalName'))]"
-      ],
-      "tags": {
-        "displayName": "ForbiddenRequests appMonitor"
-      },
-      "properties": {
-        "name": "[concat('ForbiddenRequests ', variables('webAppPortalName'))]",
-        "description": "[concat(variables('webAppPortalName'), ' has some requests that are forbidden, status code 403.')]",
-        "isEnabled": false,
-        "condition": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
-          "dataSource": {
-            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
-            "resourceUri": "[resourceId('Microsoft.Web/sites', variables('webAppPortalName'))]",
-            "metricName": "Http403"
-          },
-          "operator": "GreaterThan",
-          "threshold": 0,
-          "windowSize": "PT5M"
-        },
-        "action": {
-          "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
-          "sendToServiceOwners": true,
-          "customEmails": []
-        }
       }
     },
     {
