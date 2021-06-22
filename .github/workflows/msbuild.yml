@@ -23,5 +23,5 @@ jobs:
       run: msbuild /m /p:Configuration=Debug ${{env.SOLUTION_FILE_PATH}}
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test
    
