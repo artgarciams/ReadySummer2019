@@ -23,7 +23,7 @@ namespace SlotMachine.Controllers
 
         #endregion
 
-            
+
         // GET: Home
         public ActionResult Index()
         {
@@ -40,13 +40,13 @@ namespace SlotMachine.Controllers
 
             List<HighScoreModel> hscoreList = new List<HighScoreModel>();
             model.AllHighScores = hscoreList;
-       
+
             return View(model);
         }
 
         public ActionResult AddCredit(int addcred)
         {
-           
+
             // get last bet amount
             int betamount = Convert.ToInt32(Session["betamount"]);
             SlotMachineModel model = new SlotMachineModel();
@@ -70,12 +70,12 @@ namespace SlotMachine.Controllers
 
         public ActionResult GetFinalBalance()
         {
-           return Json(new { finalbalance = Session["playerbalance"] }, JsonRequestBehavior.AllowGet);
+            return Json(new { finalbalance = Session["playerbalance"] }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult PlayGame(int[] results)
         {
-           
+
             //7, 3Bar, 2Bar, 2Bar, 1Bar, 1Bar, 1Bar, Cherry, Blank, Blank, Blank, Blank, Blank, Blank, Blank, Blank, Blank
 
             // wait for animation to stop. maybe a better way to do this in jquery, but not sure
