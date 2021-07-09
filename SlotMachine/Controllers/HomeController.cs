@@ -30,8 +30,8 @@ namespace SlotMachine.Controllers
             Session.Add("playerbalance", 100);
             Session.Add("betamount", 1);
 
-            ViewData.Add("maintitle", System.Configuration.ConfigurationManager.AppSettings["title1"]);
-            ViewData.Add("maincolor", System.Configuration.ConfigurationManager.AppSettings["color1"]);
+            ViewData.Add("maintitle", System.Configuration.ConfigurationManager.AppSettings["title"]);
+            ViewData.Add("maincolor", System.Configuration.ConfigurationManager.AppSettings["color"]);
 
             SlotMachineModel model = new SlotMachineModel();
             model.PlayerBalance = Convert.ToInt32(Session["playerbalance"]);
