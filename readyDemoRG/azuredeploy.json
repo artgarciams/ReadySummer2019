@@ -13,8 +13,7 @@
       "defaultValue": [
         "Dev",
         "QA",
-        "Prod",
-        "Preview"
+        "Prod"       
       ],
       "type": "array",
       "metadata": {
@@ -101,8 +100,8 @@
             "displayName": "appSettings"
           },
           "properties": {
-            "title1": "[parameters('appTitleValue')]",
-            "color1": "[parameters('appColorValue')]"
+            "title": "[parameters('appTitleValue')]",
+            "color": "[parameters('appColorValue')]"
           }
         }
         
